@@ -1,0 +1,5 @@
+{"n_postings": 300,
+"location": "españa",
+"keyword": "data scientist",
+"headers": {"csrf-token": "ajax:...", "cookie": "JSESSIONID='ajax:...'; li_at='...'"}
+}
