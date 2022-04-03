@@ -2,7 +2,7 @@
 
 Pasos para obtener las ofertas de trabajo de Linkedin:
 
-- 1.Obtener "li_at"
+- 1.Obtener "li_at":
   Navigate to www.linkedin.com and log in
   Open browser developer tools (Ctrl-Shift-I)
   Go to Application>Cookis (Storage Section)
