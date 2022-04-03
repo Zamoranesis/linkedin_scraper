@@ -1,0 +1,5 @@
+{"n_postings": 300,
+"location": "españa",
+"keyword": "data scientist",
+"headers": {"csrf-token": "ajax:6627203883313737310", "cookie": "JSESSIONID='ajax:6627203883313737310'; li_at='AQEDASXIXo8AtXbSAAABf7sLRBYAAAGAAzPrl04As-C5gp0QmLgQDZ-daL5pZTCfpDhNQH-sr62i-2yUb5TeAQ6b8sPPdviOyGzssRktfugXj5gvk9YqaJxjP4SulvxK69o_YkGqpbr69tWAI9TmACAc'"}
+}
