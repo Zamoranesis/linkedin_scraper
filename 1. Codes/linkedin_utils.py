@@ -11,6 +11,8 @@ import numpy as np
 import time
 from datetime import datetime
 
+import pickle
+
 
 class LinkedinJobPostings():
     
@@ -115,7 +117,15 @@ class LinkedinJobPostings():
                             "inferredBenefits":self.iferror(lambda:resp_json['inferredBenefits'],np.nan),
                             "applyMethod":resp_json["applyMethod"]
                             }
-                    df=df.append(fields_dict, ignore_index=True)
+                    
+                    # Iteramos en el diccionario convirtiendo cada valor en una serie de pandas
+                    # para poder convertir el diccionario en un dataframe y concatenarlo
+                    for k in fields_dict.keys():
+                        fields_dict[k] = pd.Series(fields_dict[k])
+                    
+                    # Concatenamos los dataframes
+                    df = pd.concat([df, pd.DataFrame(fields_dict)], axis=0, ignore_index=True)
+    
                     #Para evitar Timeout Exception Error
                     time.sleep(np.random.uniform(2,3))
                 except KeyError as error:
@@ -157,7 +167,14 @@ class LinkedinJobPostings():
                         'company_specialties':self.iferror(lambda:resp_json["specialties"][0], np.nan),
                         'company_website': self.iferror(lambda:resp_json["websiteUrl"] ,np.nan),               
                          }
-            df=df.append(fields_dict, ignore_index=True)
+            # Iteramos para convertir los valores del diccionario en pd.Series
+            # y poder crear un dataframe que concatenar posteriormente
+            for k in fields_dict.keys():
+                        fields_dict[k] = pd.Series(fields_dict[k])
+                    
+         
+            # Concatenamos el dataframe
+            df = pd.concat([df, pd.DataFrame(fields_dict)], axis=0, ignore_index=True)
             #Para evitar Timeout Exception Error
             time.sleep(np.random.uniform(2,3))
         
